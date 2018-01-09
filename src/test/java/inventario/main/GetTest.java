@@ -19,7 +19,7 @@ public class GetTest {
     
     @Test
     public void testGetNotAllowed() {
-        // Richiesta di Put sulla risorsa principale
+        // Richiesta di Get sulla risorsa principale
         Response rGet = inventario.request().get();
         
         // Verifica che la risposta sia "405 Not Allowed"

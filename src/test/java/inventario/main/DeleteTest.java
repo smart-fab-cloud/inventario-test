@@ -18,8 +18,8 @@ public class DeleteTest {
     
     @Test
     public void testDeleteNotAllowed() {
-        // Richiesta di Put sulla risorsa principale
-        Response rDelete = inventario.request().get();
+        // Richiesta di Delete sulla risorsa principale
+        Response rDelete = inventario.request().delete();
         
         // Verifica che la risposta sia "405 Not Allowed"
         assertEquals(405, rDelete.getStatus());
