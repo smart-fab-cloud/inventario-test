@@ -42,7 +42,11 @@ public class DeleteTest {
     public void testEliminazioneProdotto() {
         // Eliminazione del prodotto inserito
         Response rDelete = inventario.path(codice).request().delete();
-        // Verifica che rDelete sia 200 OK
+        // Tentativo di reperimento del prodotto eliminato
+        Response rGet = inventario.path(codice).request().get();
+        // Verifica che rDelete sia "200 OK"
+        assertEquals(Status.OK.getStatusCode(), rDelete.getStatus());
+        // Verifica che rGet sia "404 Not Found"
         assertEquals(Status.OK.getStatusCode(), rDelete.getStatus());
     }
     
